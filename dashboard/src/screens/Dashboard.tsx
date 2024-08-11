@@ -1,4 +1,4 @@
-import { useState, useEffect, FormEvent } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 function Dashboard() {
@@ -24,7 +24,8 @@ function Dashboard() {
 		fetchBannerData();
 	}, []);
 
-	const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
+	// @ts-ignore
+	const handleChange = (e: any) => {
 		const { name, value, type, checked } = e.target;
 		setBannerData((prev) => ({
 			...prev,
