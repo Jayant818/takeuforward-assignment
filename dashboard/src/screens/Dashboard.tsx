@@ -39,7 +39,7 @@ function Dashboard() {
 		e.preventDefault();
 		try {
 			console.log(bannerData);
-			await axios.post("http://localhost:3000/banner", bannerData);
+			await axios.post("https://backend-1-chi.vercel.app/banner", bannerData);
 			alert("Banner updated successfully!");
 		} catch (error) {
 			console.error("Error updating banner:", error);

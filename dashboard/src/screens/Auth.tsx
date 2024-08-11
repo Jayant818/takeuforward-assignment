@@ -18,8 +18,8 @@ function Auth() {
 	};
 
 	return (
-		<div className="flex justify-center items-center min-h-screen bg-gray-100 px-4 sm:px-0">
-			<div className="w-full max-w-xs sm:max-w-md p-6 bg-white shadow-lg rounded-lg">
+		<div className="bg-black text-white flex justify-center items-center min-h-screen  px-4 sm:px-0">
+			<div className="w-full max-w-xs sm:max-w-md bg-gray-900  p-6  shadow-lg rounded-lg">
 				<h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
 				<form onSubmit={handleSubmit} className="space-y-4">
 					<div>
@@ -30,7 +30,7 @@ function Auth() {
 							type="text"
 							value={username}
 							onChange={(e) => setUsername(e.target.value)}
-							className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-tuf-red"
+							className="w-full p-2 border border-gray-300 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-tuf-red"
 							placeholder="Enter your username"
 						/>
 					</div>
@@ -42,7 +42,7 @@ function Auth() {
 							type="password"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
-							className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-tuf-red"
+							className="w-full p-2 border border-gray-300 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-tuf-red"
 							placeholder="Enter your password"
 						/>
 					</div>
