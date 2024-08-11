@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Banner {
-  id          Int      @id @default(autoincrement())
+  id          Int      @id 
   isVisible   Boolean  @default(false)
   title       String?
   description String?

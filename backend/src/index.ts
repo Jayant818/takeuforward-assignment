@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-	res.send("Hello from TUF API!");
+	res.json({ message: "Welcome to TUF API" });
 });
 
 app.get("/banner", async (req, res) => {
@@ -27,21 +27,21 @@ app.post("/banner", async (req, res) => {
 			where: { id: 1 },
 			update: {
 				id: 1,
-				isVisible: req.body.isVisible,
-				description: req.body.description,
-				timer: Number(req.body.timer),
-				link: req.body.link,
-				linkTitle: req.body.linkTitle,
-				title: req.body.title,
+				isVisible: true,
+				description: "12345",
+				timer: 3600,
+				link: "https:google.com",
+				title: "Hello",
+				linkTitle: "Explore TUF",
 			},
 			create: {
 				id: 1,
-				isVisible: req.body.isVisible,
-				description: req.body.description,
-				timer: Number(req.body.timer),
-				link: req.body.link,
-				title: req.body.title,
-				linkTitle: req.body.linkTitle,
+				isVisible: true,
+				description: "12345",
+				timer: 3600,
+				link: "https:google.com",
+				title: "Hello",
+				linkTitle: "Explore TUF",
 			},
 		});
 		res.json(updatedBanner);
@@ -53,6 +53,8 @@ app.post("/banner", async (req, res) => {
 
 const PORT = 3000;
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+if (require.main === module) {
+	app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
 
-module.exports = app;
+export default app;

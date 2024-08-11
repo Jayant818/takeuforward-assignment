@@ -22,7 +22,9 @@ function Banner() {
 	useEffect(() => {
 		const fetchBannerData = async () => {
 			try {
-				const response = await axios.get("http://localhost:5000/api/banner");
+				const response = await axios.get(
+					"https://backend-1-chi.vercel.app/banner"
+				);
 				console.log(response);
 				setBannerData(response.data);
 				setTimeLeft(response.data.timer);
