@@ -9,7 +9,7 @@ function App() {
 					TUF
 				</h1>
 				<a
-					href="http://localhost:5174"
+					href="https://takeuforward-assignment-mien.vercel.app/"
 					target="_blank"
 					className="bg-tuf-red flex items-center gap-1 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors"
 				>

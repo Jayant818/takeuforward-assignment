@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/api/banner", async (req, res) => {
+app.get("/", async (req, res) => {
 	try {
 		const banner = await prisma.banner.findFirst();
 		res.json(banner);
@@ -17,7 +17,7 @@ app.get("/api/banner", async (req, res) => {
 	}
 });
 
-app.post("/api/banner", async (req, res) => {
+app.post("/", async (req, res) => {
 	try {
 		const updatedBanner = await prisma.banner.upsert({
 			where: { id: 1 },
@@ -47,6 +47,8 @@ app.post("/api/banner", async (req, res) => {
 	}
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = 3000;
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+module.exports = app;
