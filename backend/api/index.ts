@@ -8,7 +8,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", async (req, res) => {
+app.get("/", (req, res) => {
+	res.send("Hello from TUF API!");
+});
+
+app.get("/banner", async (req, res) => {
 	try {
 		const banner = await prisma.banner.findFirst();
 		res.json(banner);
@@ -17,7 +21,7 @@ app.get("/", async (req, res) => {
 	}
 });
 
-app.post("/", async (req, res) => {
+app.post("/banner", async (req, res) => {
 	try {
 		const updatedBanner = await prisma.banner.upsert({
 			where: { id: 1 },
