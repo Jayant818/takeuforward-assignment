@@ -15,7 +15,7 @@ function Dashboard() {
 		const fetchBannerData = async () => {
 			try {
 				const response = await axios.get(
-					"https://backend-1-chi.vercel.app/banner"
+					"https://backend-lake-eight.vercel.app/banner"
 				);
 				setBannerData(response.data);
 			} catch (error) {
@@ -39,7 +39,10 @@ function Dashboard() {
 		e.preventDefault();
 		try {
 			console.log(bannerData);
-			await axios.post("https://backend-1-chi.vercel.app/banner", bannerData);
+			await axios.post(
+				"https://backend-lake-eight.vercel.app/banner",
+				bannerData
+			);
 			alert("Banner updated successfully!");
 		} catch (error) {
 			console.error("Error updating banner:", error);

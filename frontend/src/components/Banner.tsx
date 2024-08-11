@@ -23,7 +23,7 @@ function Banner() {
 		const fetchBannerData = async () => {
 			try {
 				const response = await axios.get(
-					"https://backend-1-chi.vercel.app/banner"
+					"https://backend-lake-eight.vercel.app/banner"
 				);
 				console.log(response);
 				setBannerData(response.data);
